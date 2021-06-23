@@ -1,0 +1,4 @@
+FROM mariadb
+CD /var/lib/mysql
+RUN ["/usr/bin/mysql_install_db --datadir=./data --user=mysql"]
+RUN ["/usr/bin/mysqld_safe --datadir='./data' --user=mysql &"]
