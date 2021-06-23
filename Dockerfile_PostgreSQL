@@ -5,6 +5,6 @@ RUN chown postgres:postgres /run/postgresql
 USER postgres
 ENV PGDATA=/tmp/data
 ENV LANG=C
-CMD initdb -U postgres
+RUN initdb -U postgres
 USER root
 
