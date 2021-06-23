@@ -1,3 +1,10 @@
 FROM alpine
-RUN ["apk","add","postgreSQL"]
-RUN ["mkdir","testdir"]
+RUN apk add postgresql postgresql-client
+RUN mkdir /run/postgredsql
+RUN chown postgres:postgres /run/postgresql
+USER postgres
+ENV PGDATA=/tmp/data
+ENV LANG=C
+CMD initdb -U postgres
+USER root
+
