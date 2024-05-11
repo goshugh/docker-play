@@ -1,6 +1,6 @@
 FROM alpine
 RUN apk add postgresql postgresql-client
-RUN mkdir /run/postgredsql
+RUN mkdir /run/postgresql
 RUN chown postgres:postgres /run/postgresql
 USER postgres
 ENV PGDATA=/tmp/data
