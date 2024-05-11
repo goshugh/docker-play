@@ -6,3 +6,6 @@ RUN pg_ctl start
 USER kms
 RUN cd KS*/apa*/bin
 RUN ./startup.sh
+EXPOSE 5696
+RUN cd /home/kms/KSignKMS_v3.2.4/apache-tomcat-9.0.74/bin
+CMD ["startup.sh"]
