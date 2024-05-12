@@ -1,9 +1,4 @@
 FROM goshugh/securedb:ksignkms3_1
 USER postgres
 ENV PGDATA=/var/lib/postgresql/data
-ENV LANG=C
 RUN pg_ctl start
-USER kms
-RUN cd /home/kms/KSignKMS_v3.2.4/apache-tomcat-9.0.74/bin
-EXPOSE 5696
-CMD ["startup.sh"]
